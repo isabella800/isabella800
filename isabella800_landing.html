@@ -1,0 +1,996 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Isabella 800 - Soluciones Funerarias</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-dark: #003a70;
+            --primary-blue: #0066cc;
+            --primary-light: #4da6d6;
+            --accent-green: #00b359;
+            --accent-light: #90ee90;
+            --text-dark: #333;
+            --text-light: #666;
+            --bg-light: #f9f9f9;
+            --white: #ffffff;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: var(--text-dark);
+            line-height: 1.6;
+        }
+
+        /* Header y Navegación */
+        header {
+            background: linear-gradient(135deg, var(--primary-dark) 0%, var(--primary-blue) 100%);
+            padding: 1rem 2rem;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        nav {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 2rem;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: var(--white);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .logo-text {
+            background: linear-gradient(90deg, #90ee90, #00b359);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+            flex-wrap: wrap;
+            align-items: center;
+        }
+
+        nav a {
+            color: var(--white);
+            text-decoration: none;
+            font-size: 0.95rem;
+            transition: color 0.3s;
+            border-bottom: 2px solid transparent;
+            padding-bottom: 0.3rem;
+        }
+
+        nav a:hover {
+            color: var(--accent-light);
+            border-bottom-color: var(--accent-light);
+        }
+
+        .cta-button {
+            background: var(--accent-green);
+            color: var(--white);
+            padding: 0.7rem 1.5rem;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: all 0.3s;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .cta-button:hover {
+            background: #008c42;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0, 179, 89, 0.3);
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, var(--primary-dark) 0%, var(--primary-blue) 50%, var(--primary-light) 100%);
+            background-size: 400% 400%;
+            animation: gradient 15s ease infinite;
+            color: var(--white);
+            padding: 80px 2rem;
+            text-align: center;
+            min-height: 600px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        @keyframes gradient {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -10%;
+            width: 500px;
+            height: 500px;
+            background: rgba(144, 238, 144, 0.1);
+            border-radius: 50%;
+            animation: float 6s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(20px); }
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            max-width: 800px;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            font-weight: 300;
+            letter-spacing: 2px;
+        }
+
+        .hero-subtitle {
+            font-size: 1.8rem;
+            margin-bottom: 2rem;
+            color: var(--accent-light);
+            font-weight: bold;
+        }
+
+        .hero-tagline {
+            font-size: 1.1rem;
+            margin-bottom: 2rem;
+            opacity: 0.95;
+            font-style: italic;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .hero-buttons a {
+            padding: 1rem 2.5rem;
+            font-size: 1.1rem;
+            border-radius: 5px;
+            text-decoration: none;
+            transition: all 0.3s;
+            font-weight: bold;
+        }
+
+        .primary-btn {
+            background: var(--accent-green);
+            color: var(--white);
+        }
+
+        .primary-btn:hover {
+            background: #008c42;
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(0, 179, 89, 0.4);
+        }
+
+        .secondary-btn {
+            background: rgba(255, 255, 255, 0.2);
+            color: var(--white);
+            border: 2px solid var(--white);
+        }
+
+        .secondary-btn:hover {
+            background: rgba(255, 255, 255, 0.3);
+            transform: translateY(-3px);
+        }
+
+        /* Secciones */
+        section {
+            padding: 80px 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        section h2 {
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+            text-align: center;
+            color: var(--primary-dark);
+            position: relative;
+            padding-bottom: 1.5rem;
+        }
+
+        section h2::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 3px;
+            background: var(--accent-green);
+            border-radius: 2px;
+        }
+
+        /* Sobre Nosotros */
+        #nosotros {
+            background: var(--bg-light);
+        }
+
+        .nosotros-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: center;
+        }
+
+        .nosotros-text h3 {
+            color: var(--primary-blue);
+            font-size: 1.3rem;
+            margin-bottom: 1rem;
+        }
+
+        .nosotros-text p {
+            color: var(--text-light);
+            margin-bottom: 1rem;
+            line-height: 1.8;
+        }
+
+        .highlight {
+            color: var(--accent-green);
+            font-weight: bold;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .feature-tag {
+            background: var(--white);
+            padding: 1.5rem;
+            border-radius: 8px;
+            border-left: 4px solid var(--accent-green);
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+            transition: all 0.3s;
+        }
+
+        .feature-tag:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        .feature-tag strong {
+            display: block;
+            color: var(--primary-blue);
+            margin-bottom: 0.5rem;
+        }
+
+        /* Valores */
+        #valores {
+            background: linear-gradient(135deg, #e8f4f8 0%, #f0f9f5 100%);
+        }
+
+        .valores-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2.5rem;
+        }
+
+        .valor-card {
+            background: var(--white);
+            padding: 2rem;
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+            transition: all 0.3s;
+        }
+
+        .valor-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+        }
+
+        .valor-icon {
+            width: 80px;
+            height: 80px;
+            margin: 0 auto 1.5rem;
+            background: linear-gradient(135deg, var(--primary-blue), var(--accent-green));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2.5rem;
+        }
+
+        .valor-card h3 {
+            color: var(--primary-dark);
+            margin-bottom: 1rem;
+            font-size: 1.3rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .valor-card p {
+            color: var(--text-light);
+            font-size: 0.95rem;
+        }
+
+        /* Por qué elegirnos */
+        #porque {
+            background: var(--white);
+        }
+
+        .porque-list {
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .porque-item {
+            display: flex;
+            gap: 1.5rem;
+            margin-bottom: 1.5rem;
+            padding: 1.5rem;
+            background: linear-gradient(135deg, rgba(0, 179, 89, 0.05) 0%, rgba(77, 166, 214, 0.05) 100%);
+            border-radius: 8px;
+            border-left: 4px solid var(--accent-green);
+            transition: all 0.3s;
+        }
+
+        .porque-item:hover {
+            transform: translateX(5px);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+
+        .porque-icon {
+            flex-shrink: 0;
+            width: 40px;
+            height: 40px;
+            background: var(--accent-green);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--white);
+            font-weight: bold;
+            font-size: 1.3rem;
+        }
+
+        .porque-text p {
+            margin: 0;
+            color: var(--text-light);
+        }
+
+        .porque-text strong {
+            color: var(--primary-dark);
+            display: block;
+            margin-bottom: 0.3rem;
+        }
+
+        /* Planes */
+        #planes {
+            background: var(--bg-light);
+        }
+
+        .planes-intro {
+            max-width: 700px;
+            margin: 0 auto 3rem;
+            text-align: center;
+        }
+
+        .planes-intro p {
+            color: var(--text-light);
+            font-size: 1.1rem;
+            line-height: 1.8;
+        }
+
+        .plan-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2.5rem;
+            margin-bottom: 4rem;
+        }
+
+        .plan-card {
+            background: var(--white);
+            padding: 2.5rem;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            text-align: center;
+            transition: all 0.3s;
+            border-top: 4px solid var(--primary-blue);
+        }
+
+        .plan-card:nth-child(2) {
+            border-top-color: var(--accent-green);
+            transform: scale(1.02);
+        }
+
+        .plan-card:nth-child(3) {
+            border-top-color: var(--primary-light);
+        }
+
+        .plan-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+        }
+
+        .plan-card h3 {
+            color: var(--primary-dark);
+            margin-bottom: 1.5rem;
+            font-size: 1.5rem;
+        }
+
+        .plan-card ul {
+            list-style: none;
+            margin-bottom: 2rem;
+            text-align: left;
+        }
+
+        .plan-card li {
+            padding: 0.5rem 0;
+            color: var(--text-light);
+            border-bottom: 1px solid #eee;
+            padding-left: 1.5rem;
+            position: relative;
+        }
+
+        .plan-card li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: var(--accent-green);
+            font-weight: bold;
+        }
+
+        /* Experiencia */
+        #experiencia {
+            background: var(--white);
+        }
+
+        .experiencia-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: center;
+        }
+
+        .experiencia-text h3 {
+            color: var(--primary-blue);
+            font-size: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .experiencia-text p {
+            color: var(--text-light);
+            margin-bottom: 1.5rem;
+            line-height: 1.8;
+        }
+
+        .partners {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1.5rem;
+        }
+
+        .partner-item {
+            background: var(--bg-light);
+            padding: 1.5rem;
+            border-radius: 8px;
+            text-align: center;
+            font-weight: bold;
+            color: var(--primary-dark);
+            border-left: 4px solid var(--accent-green);
+            transition: all 0.3s;
+        }
+
+        .partner-item:hover {
+            background: var(--white);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+
+        /* Contacto */
+        #contacto {
+            background: linear-gradient(135deg, var(--primary-dark) 0%, var(--primary-blue) 100%);
+            color: var(--white);
+        }
+
+        #contacto h2 {
+            color: var(--white);
+        }
+
+        #contacto h2::after {
+            background: var(--accent-light);
+        }
+
+        .contacto-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .contacto-info {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .contact-item {
+            margin-bottom: 2rem;
+            display: flex;
+            gap: 1.5rem;
+            align-items: flex-start;
+        }
+
+        .contact-icon {
+            width: 50px;
+            height: 50px;
+            background: rgba(144, 238, 144, 0.2);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.8rem;
+            flex-shrink: 0;
+        }
+
+        .contact-details h3 {
+            margin-bottom: 0.5rem;
+            font-size: 1.1rem;
+        }
+
+        .contact-details a {
+            color: var(--accent-light);
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .contact-details a:hover {
+            color: var(--white);
+            text-decoration: underline;
+        }
+
+        .contacto-form {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 2rem;
+            border-radius: 10px;
+            backdrop-filter: blur(10px);
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 0.8rem;
+            border: none;
+            border-radius: 5px;
+            font-family: inherit;
+            font-size: 0.95rem;
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            min-height: 120px;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: none;
+            box-shadow: 0 0 0 3px rgba(144, 238, 144, 0.3);
+        }
+
+        .contacto-form button {
+            width: 100%;
+            background: var(--accent-green);
+            color: var(--white);
+            border: none;
+            padding: 1rem;
+            border-radius: 5px;
+            font-weight: bold;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .contacto-form button:hover {
+            background: #008c42;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0, 179, 89, 0.4);
+        }
+
+        /* Footer */
+        footer {
+            background: var(--primary-dark);
+            color: var(--white);
+            text-align: center;
+            padding: 2rem;
+            border-top: 3px solid var(--accent-green);
+        }
+
+        footer p {
+            margin-bottom: 0.5rem;
+        }
+
+        .footer-credits {
+            font-size: 0.85rem;
+            opacity: 0.8;
+            margin-top: 1rem;
+        }
+
+        /* Responsivo */
+        @media (max-width: 768px) {
+            nav {
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            nav ul {
+                gap: 1rem;
+            }
+
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .hero-subtitle {
+                font-size: 1.2rem;
+            }
+
+            section {
+                padding: 50px 1.5rem;
+            }
+
+            section h2 {
+                font-size: 1.8rem;
+                margin-bottom: 2rem;
+            }
+
+            .nosotros-content,
+            .experiencia-content,
+            .contacto-content {
+                grid-template-columns: 1fr;
+            }
+
+            .hero-buttons {
+                flex-direction: column;
+            }
+
+            .hero-buttons a {
+                width: 100%;
+                text-align: center;
+            }
+
+            .valores-grid,
+            .planes-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .partner-item {
+                font-size: 0.9rem;
+            }
+
+            .hero::before {
+                width: 300px;
+                height: 300px;
+                top: 0;
+                right: -50%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header y Navegación -->
+    <header>
+        <nav>
+            <div class="logo">
+                <span>Isabella</span><span class="logo-text">800</span>
+            </div>
+            <ul>
+                <li><a href="#nosotros">Nosotros</a></li>
+                <li><a href="#valores">Valores</a></li>
+                <li><a href="#porque">¿Por qué?</a></li>
+                <li><a href="#planes">Planes</a></li>
+                <li><a href="#experiencia">Experiencia</a></li>
+                <li><a href="#contacto" class="cta-button">Contacto</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>ISABELLA 800</h1>
+            <p class="hero-subtitle">Soluciones Funerarias</p>
+            <p class="hero-tagline">Tranquilidad para Siempre</p>
+            <div class="hero-buttons">
+                <a href="#planes" class="hero-buttons primary-btn">Conocer Planes</a>
+                <a href="#contacto" class="hero-buttons secondary-btn">Contactarnos</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sobre Nosotros -->
+    <section id="nosotros">
+        <h2>Sobre Nosotros</h2>
+        <div class="nosotros-content">
+            <div class="nosotros-text">
+                <h3>Especialistas en Servicios Funerarios</h3>
+                <p>Somos una empresa especializada en la venta y prestación de <span class="highlight">servicios funerarios, cementerios y cremación</span> a nivel nacional e internacional, afiliada al <span class="highlight">Grupo PREVISEGURA</span>.</p>
+                <p>Con más de <span class="highlight">20 años de experiencia</span> e impecable trayectoria, nos precede una demostrada excelencia en el cuidado y atención a nuestros clientes y dolientes.</p>
+                <p style="margin-top: 2rem; font-style: italic; color: var(--primary-blue);">Nuestro tiempo y crecimiento alcanzado reflejan la confianza depositada en nosotros.</p>
+            </div>
+            <div class="features-grid">
+                <div class="feature-tag">
+                    <strong>Trayectoria</strong>
+                    Más de 20 años sirviendo con excelencia
+                </div>
+                <div class="feature-tag">
+                    <strong>Cobertura</strong>
+                    Nacional e Internacional
+                </div>
+                <div class="feature-tag">
+                    <strong>Respaldo</strong>
+                    Grupo PREVISEGURA
+                </div>
+                <div class="feature-tag">
+                    <strong>Compromiso</strong>
+                    Atención especializada al doliente
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Valores -->
+    <section id="valores">
+        <h2>Nuestros Valores</h2>
+        <p style="text-align: center; color: var(--text-light); margin-bottom: 3rem; font-size: 1.1rem;">Los valores que orientan nuestros esfuerzos son:</p>
+        <div class="valores-grid">
+            <div class="valor-card">
+                <div class="valor-icon">❤️</div>
+                <h3>Empatía</h3>
+                <p>Respuesta comprensivamente ante las necesidades de nuestros clientes y dolientes.</p>
+            </div>
+            <div class="valor-card">
+                <div class="valor-icon">📈</div>
+                <h3>Competitividad</h3>
+                <p>Mejora continua e innovación en nuestros productos y servicios.</p>
+            </div>
+            <div class="valor-card">
+                <div class="valor-icon">🤝</div>
+                <h3>Responsabilidad</h3>
+                <p>Compromiso absoluto con una operación ética y sostenible.</p>
+            </div>
+            <div class="valor-card">
+                <div class="valor-icon">🎯</div>
+                <h3>Accesibilidad</h3>
+                <p>Productos al alcance de todos para su uso inmediato.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ¿Por qué elegirnos? -->
+    <section id="porque">
+        <h2>¿Por Qué Elegirnos?</h2>
+        <div class="porque-list">
+            <div class="porque-item">
+                <div class="porque-icon">1</div>
+                <div class="porque-text">
+                    <strong>Atención Inmediata</strong>
+                    <p>De servicios funerarios, cementerios y crematorios disponible 24 horas.</p>
+                </div>
+            </div>
+            <div class="porque-item">
+                <div class="porque-icon">2</div>
+                <div class="porque-text">
+                    <strong>Cobertura Global</strong>
+                    <p>Servicios a nivel nacional e internacional para tranquilidad total.</p>
+                </div>
+            </div>
+            <div class="porque-item">
+                <div class="porque-icon">3</div>
+                <div class="porque-text">
+                    <strong>Libre Escogencia</strong>
+                    <p>Sin limitaciones en la selección de funerarias según sus preferencias.</p>
+                </div>
+            </div>
+            <div class="porque-item">
+                <div class="porque-icon">4</div>
+                <div class="porque-text">
+                    <strong>Flexibilidad Familiar</strong>
+                    <p>Libre afinidad familiar y edades, según el plan elegido.</p>
+                </div>
+            </div>
+            <div class="porque-item">
+                <div class="porque-icon">5</div>
+                <div class="porque-text">
+                    <strong>Fácil Compra</strong>
+                    <p>Pago en cuotas solidarias con condiciones accesibles.</p>
+                </div>
+            </div>
+            <div class="porque-item">
+                <div class="porque-icon">6</div>
+                <div class="porque-text">
+                    <strong>Atención Especializada</strong>
+                    <p>Equipo capacitado para brindar apoyo emocional al doliente.</p>
+                </div>
+            </div>
+            <div class="porque-item">
+                <div class="porque-icon">7</div>
+                <div class="porque-text">
+                    <strong>Mejor Relación</strong>
+                    <p>Optimizamos costos y calidad a la mayor complacencia de nuestros clientes.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Planes -->
+    <section id="planes">
+        <h2>Nuestros Planes</h2>
+        <div class="planes-intro">
+            <p>Diseñados a la medida de las expectativas de nuestros clientes, optimizando <span class="highlight">costos y calidad</span> a la mayor complacencia de ellos.</p>
+        </div>
+        <div class="plan-cards">
+            <div class="plan-card">
+                <h3>Individual</h3>
+                <ul>
+                    <li>Contratación personal</li>
+                    <li>Flexibilidad total</li>
+                    <li>Personalización completa</li>
+                    <li>Soporte dedicado</li>
+                </ul>
+                <a href="#contacto" class="cta-button">Solicitar Información</a>
+            </div>
+            <div class="plan-card">
+                <h3>Corporativo Estándar</h3>
+                <ul>
+                    <li>Para grupos empresariales</li>
+                    <li>Múltiples afiliados</li>
+                    <li>Tarifas especiales</li>
+                    <li>Administración simplificada</li>
+                </ul>
+                <a href="#contacto" class="cta-button">Solicitar Información</a>
+            </div>
+            <div class="plan-card">
+                <h3>Corporativo Masivo</h3>
+                <ul>
+                    <li>Grandes volúmenes</li>
+                    <li>Cobertura extendida</li>
+                    <li>Máxima flexibilidad</li>
+                    <li>Asesoramiento experto</li>
+                </ul>
+                <a href="#contacto" class="cta-button">Solicitar Información</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experiencia -->
+    <section id="experiencia">
+        <h2>Nuestra Experiencia</h2>
+        <div class="experiencia-content">
+            <div class="experiencia-text">
+                <h3>20 Años de Trayectoria</h3>
+                <p>La vivencia con nuestros clientes a lo largo de 20 años han dado el fruto del <span class="highlight">conocimiento y habilidades</span> en nuestro negocio.</p>
+                <p>Somos respaldados por <span class="highlight">Grupo PreviSegura</span>, una institución líder en soluciones funerarias a nivel nacional.</p>
+                <p style="margin-top: 2rem;">Nuestras <span class="highlight">alianzas estratégicas</span> con funerarias, cementerios y crematorios de excelencia garantizan un servicio de calidad mundial.</p>
+            </div>
+            <div class="partners">
+                <div class="partner-item">Grupo PreviSegura</div>
+                <div class="partner-item">PreviCenter</div>
+                <div class="partner-item">Grupo Funerario PS</div>
+                <div class="partner-item">Funeraria Santa Trinidad</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contacto -->
+    <section id="contacto">
+        <h2>Contacta con Nosotros</h2>
+        <div class="contacto-content">
+            <div class="contacto-info">
+                <div class="contact-item">
+                    <div class="contact-icon">📧</div>
+                    <div class="contact-details">
+                        <h3>Email</h3>
+                        <a href="mailto:Directiva@isabella800.com">Directiva@isabella800.com</a>
+                    </div>
+                </div>
+                <div class="contact-item">
+                    <div class="contact-icon">📱</div>
+                    <div class="contact-details">
+                        <h3>Teléfono</h3>
+                        <a href="tel:+584123042681">+58 412-3042681</a>
+                    </div>
+                </div>
+                <div class="contact-item">
+                    <div class="contact-icon">📍</div>
+                    <div class="contact-details">
+                        <h3>Disponibilidad</h3>
+                        <p>Línea de atención 24 horas</p>
+                    </div>
+                </div>
+                <div class="contact-item">
+                    <div class="contact-icon">🔗</div>
+                    <div class="contact-details">
+                        <h3>Síguenos</h3>
+                        <a href="#">Instagram @isabella800</a>
+                    </div>
+                </div>
+            </div>
+            <form class="contacto-form" action="https://formspree.io/f/your-form-id" method="POST">
+                <div class="form-group">
+                    <label for="nombre">Nombre</label>
+                    <input type="text" id="nombre" name="nombre" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Correo Electrónico</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="telefono">Teléfono</label>
+                    <input type="tel" id="telefono" name="telefono">
+                </div>
+                <div class="form-group">
+                    <label for="mensaje">Mensaje</label>
+                    <textarea id="mensaje" name="mensaje" required></textarea>
+                </div>
+                <button type="submit">Enviar Mensaje</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p><strong>Isabella 800 - Soluciones Funerarias</strong></p>
+        <p>Respaldo: Grupo PreviSegura</p>
+        <p>Tranquilidad para Siempre</p>
+        <div class="footer-credits">
+            <p>&copy; 2024 Isabella 800. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+</body>
+</html>
